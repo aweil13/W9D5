@@ -32,3 +32,25 @@ function debounce(func, wait = 20, immediate = true) {
     if (callNow) func.apply(context, args);
   };
 }
+
+const allSlides = document.querySelectorAll('.slide');
+
+const slideIn = e => {
+  Array.from(allSlides).forEach( sliderImg => {
+    const windowBottom = window.scrollY + window.innerHeight;
+    const windowTop = window.scrollY;
+    const imageMiddle = sliderImg.height / 2 + sliderImg.offsetTop;
+    const imageBottom = sliderImg.height + sliderImg.offsetTop;
+    
+    console.log(`windowTop: ${windowTop}, image: ${imageBottom}`);
+    if (windowBottom >= imageMiddle && windowTop < imageBottom) {
+      console.log("slide in");
+      sliderImg.classList.add('active');
+    } else {
+      console.log("slide out");
+      sliderImg.classList.remove('active');
+    }
+  })
+}
+
+window.addEventListener('scroll', debounce(slideIn));

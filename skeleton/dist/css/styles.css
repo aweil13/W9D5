@@ -12,6 +12,12 @@ h1 {
   font-weight: 200;
 }
 
+div.slide-and-scroll {
+  width: 700px;
+  height: 2840px;
+  margin: 20px auto;
+}
+
 .drop-down-dog-list {
   display: none;
 }
