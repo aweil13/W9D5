@@ -33,16 +33,20 @@ const dogLinkCreator = () => {
 }
 
 const handleEnter = e => {
-  const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
-  dogLinks.forEach(el => {el.classList.add("show")});
+  // const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
+  // dogLinks.forEach(el => {el.classList.add("show")});
+  const ul = document.querySelector('.drop-down-dog-list');
+  ul.classList.add("show");
 }
 
 const handleLeave = e => {
-  const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
-  dogLinks.forEach(el => {el.classList.remove("show")});
+  // const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
+  // dogLinks.forEach(el => {el.classList.remove("show")});
+  const ul = document.querySelector('.drop-down-dog-list');
+  ul.classList.remove("show");
 }
 
 attachDogLinks();
-const h = document.getElementById("c-dogs")
-h.addEventListener('mouseleave', handleLeave);
-h.addEventListener('mouseenter', handleEnter);
+const n = document.querySelector(".drop-down-dog-nav");
+n.addEventListener('mouseenter', handleEnter);
+n.addEventListener('mouseleave', handleLeave);

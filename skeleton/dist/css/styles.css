@@ -12,12 +12,12 @@ h1 {
   font-weight: 200;
 }
 
-.dog-links .show {
-  display: list-item;
+.drop-down-dog-list {
+  display: none;
 }
 
-.dog-links {
-  display: none;
+.drop-down-dog-list.show {
+  display: block;
 }
 
 .header {
