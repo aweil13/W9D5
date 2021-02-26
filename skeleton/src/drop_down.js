@@ -32,4 +32,12 @@ export const attachDogLinks = () => {
   });
 }
 
+const handleEnter = e => {
+  
+}
+
+const handleLeave = e => {
+
+}
+
 attachDogLinks();
