@@ -25,7 +25,7 @@ const dogLinkCreator = () => {
   return dogLinks;
 }
 
-export const attachDogLinks = () => {
+ const attachDogLinks = () => {
   const dogLinks = dogLinkCreator();
   dogLinks.forEach( el => {
     document.getElementsByClassName("drop-down-dog-list")[0].appendChild(el);
@@ -33,11 +33,16 @@ export const attachDogLinks = () => {
 }
 
 const handleEnter = e => {
-  
+  const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
+  dogLinks.forEach(el => {el.classList.add("show")});
 }
 
 const handleLeave = e => {
-
+  const dogLinks = Array.from(document.getElementsByClassName('dog-links'));
+  dogLinks.forEach(el => {el.classList.remove("show")});
 }
 
 attachDogLinks();
+const h = document.getElementById("c-dogs")
+h.addEventListener('mouseleave', handleLeave);
+h.addEventListener('mouseenter', handleEnter);
